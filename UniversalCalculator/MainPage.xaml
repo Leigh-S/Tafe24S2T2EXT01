@@ -1,4 +1,4 @@
-﻿<Page x:Class="Calculator.Mathscalculator" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:control="using:Calculator.Controls" Loaded="pageLoaded" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+﻿<Page x:Class="Calculator.MainPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:control="using:Calculator.Controls" Loaded="pageLoaded" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 	<!-- resources -->
 	<Page.Resources>
 		<ResourceDictionary>

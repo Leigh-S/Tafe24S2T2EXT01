@@ -7,13 +7,13 @@ using Windows.UI.Xaml.Controls;
 
 namespace Calculator
 {
-	public sealed partial class Mathscalculator : Page
+	public sealed partial class MainPage : Page
 	{
 		// default var
-		public static Mathscalculator mainPage { get; set; }
+		public static MainPage mainPage { get; set; }
 
 		// default functions
-		public Mathscalculator()
+		public MainPage()
 		{
 			InitializeComponent();
 

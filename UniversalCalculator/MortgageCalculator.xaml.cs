@@ -25,6 +25,55 @@ namespace Calculator
 		public MortgageCalculator()
 		{
 			this.InitializeComponent();
+			// Attach event handlers for input validation
+			PrincipalBorrowTextBox.BeforeTextChanging += TextBox_BeforeTextChanging;
+			YearsTextBox.BeforeTextChanging += TextBox_BeforeTextChanging;
+			MonthsTextBox.BeforeTextChanging += TextBox_BeforeTextChanging;
+			YearlyInterestRateTextBox.BeforeTextChanging += TextBox_BeforeTextChanging;
+		}
+
+		private void TextBox_BeforeTextChanging(TextBox sender, TextBoxBeforeTextChangingEventArgs args)
+		{
+			// Ensure only numeric input
+			args.Cancel = !IsTextNumeric(args.NewText);
+		}
+
+		private bool IsTextNumeric(string text)
+		{
+			foreach (char c in text)
+			{
+				if (!char.IsDigit(c) && c != '.')
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(MainMenu));
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			// Get input values
+			double principal = double.Parse(PrincipalBorrowTextBox.Text);
+			int years = int.Parse(YearsTextBox.Text);
+			int months = int.Parse(MonthsTextBox.Text);
+			double yearlyInterestRate = double.Parse(YearlyInterestRateTextBox.Text) / 100;
+
+			// Calculate monthly interest rate
+			double monthlyInterestRate = yearlyInterestRate / 12;
+			MonthlyInterestRateTextBlock.Text = monthlyInterestRate.ToString("P");
+
+			// Calculate number of months
+			int totalMonths = (years * 12) + months;
+
+			// Calculate monthly repayment 
+			double monthlyRepayment = principal * (monthlyInterestRate * Math.Pow(1 + monthlyInterestRate, totalMonths)) / (Math.Pow(1 + monthlyInterestRate, totalMonths) - 1);
+			MonthlyRepaymentsTextBlock.Text = monthlyRepayment.ToString("C");
 		}
 	}
 }

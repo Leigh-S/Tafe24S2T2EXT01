@@ -9,6 +9,55 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <TextBlock Margin="10,51,10,0" 
+                   TextWrapping="Wrap" 
+                   Text="Currency Converter" 
+                   VerticalAlignment="Top" 
+                   Height="132" 
+                   Width="1420" 
+                   FontSize="36" 
+                   TextAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   FontWeight="Bold"/>
 
+        <StackPanel Margin="0,150,0,0" 
+                    HorizontalAlignment="Center" 
+                    Width="350">
+            
+            <ComboBox x:Name="FromCurrency" 
+                      PlaceholderText="From Currency"
+                      Height="50" 
+                      FontSize="22" 
+                      Margin="0,0,0,20"/>
+
+            <ComboBox x:Name="ToCurrency" 
+                      PlaceholderText="To Currency"
+                      Height="50" 
+                      FontSize="22" 
+                      Margin="0,0,0,20"/>
+
+            <TextBox x:Name="AmountToConvert" 
+                     PlaceholderText="Enter Amount"
+                     Height="50" 
+                     FontSize="22" 
+                     Margin="0,0,0,20"/>
+
+            <Button Content="Convert" 
+                    Height="50" 
+                    FontSize="22" 
+                    Click="ConvertButton_Click"/>
+
+            <TextBlock x:Name="ResultText"
+                      Height="50" 
+                      FontSize="22" 
+                      TextAlignment="Center" 
+                      Margin="0,20,0,0"/>
+
+            <Button Content="Back to Menu" 
+                    Height="50" 
+                    FontSize="22" 
+                    Margin="0,20,0,0"
+                    Click="BackButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

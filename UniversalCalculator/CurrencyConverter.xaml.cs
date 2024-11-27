@@ -1,30 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Calculator
 {
-	/// <summary>
-	/// An empty page that can be used on its own or navigated to within a Frame.
-	/// </summary>
 	public sealed partial class CurrencyConverter : Page
 	{
 		public CurrencyConverter()
 		{
 			this.InitializeComponent();
+			InitializeCurrencyComboBoxes();
+		}
+
+		private void InitializeCurrencyComboBoxes()
+		{
+			string[] currencies = { "USD", "EUR", "GBP", "AUD", "CAD", "JPY", "NZD" };
+			FromCurrency.ItemsSource = currencies;
+			ToCurrency.ItemsSource = currencies;
+		}
+
+		private void ConvertButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (FromCurrency.SelectedItem == null || ToCurrency.SelectedItem == null || 
+				string.IsNullOrEmpty(AmountToConvert.Text))
+			{
+				ResultText.Text = "Please fill in all fields";
+				return;
+			}
+
+			if (!double.TryParse(AmountToConvert.Text, out double amount))
+			{
+				ResultText.Text = "Please enter a valid number";
+				return;
+			}
+
+			// Add conversion logic here
+			double result = PerformConversion(amount);
+			ResultText.Text = $"{amount} {FromCurrency.SelectedItem} = {result:F2} {ToCurrency.SelectedItem}";
+		}
+
+		private double PerformConversion(double amount)
+		{
+			// Placeholder conversion logic - replace with actual conversion rates
+			return amount * 1.5; // Example conversion rate
+		}
+		private void BackButton_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(Calculator.MainMenu));
+		}
 		}
 	}
-}

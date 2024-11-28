@@ -33,7 +33,7 @@
 				<TextBlock x:Name="MonthlyInterestRateTextBlock" Margin="0,0,0,10"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Padding="5,5,5,5">
-				<TextBlock Text="Monthly Repayments $:"/>
+				<TextBlock Text="Monthly Repayments:" Width="138"/>
 				<TextBlock x:Name="MonthlyRepaymentsTextBlock" Margin="0,0,0,20"/>
 			</StackPanel>
 			<Button Content="Calculate" Margin="0,0,0,10" HorizontalAlignment="Center" Click="Button_Click_1"/>

@@ -27,22 +27,22 @@ namespace Calculator
 		{
 			this.InitializeComponent();
 		}
-
+		//Navagates to the maths calculator
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(Mathscalculator));
 		}
-
+		//Navagates to the mortgage calculator
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(MortgageCalculator));
 		}
-
+		//Navagates to the currency Converter
 		private void Button_Click_2(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(CurrencyConverter));
 		}
-
+		//Exits the application
 		private void Button_Click_3(object sender, RoutedEventArgs e)
 		{
 			CoreApplication.Exit();

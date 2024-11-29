@@ -15,6 +15,7 @@
 				<Button Content="Maths Calculator" Margin="10,10,10,10" VerticalAlignment="Top" Height="100" Width="350" HorizontalAlignment="Center" FontSize="22" Click="Button_Click"/>
 				<Button Content="Mortgage Calculator" Margin="10,10,10,10" VerticalAlignment="Top" Height="100" Width="350" HorizontalAlignment="Center" FontSize="22" Click="Button_Click_1"/>
 				<Button Content="Currency Converter" Margin="10,10,10,10" VerticalAlignment="Top" Height="100" Width="350" HorizontalAlignment="Center" FontSize="22" Click="Button_Click_2"/>
+				<Button Content="Trip Calculator" Margin="10,10,10,10" VerticalAlignment="Top" Height="100" Width="350" HorizontalAlignment="Center" FontSize="22" Click="Button_Click_4"/>
 				<Button Content="Exit" Margin="10,10,10,10" VerticalAlignment="Top" Height="100" Width="350" HorizontalAlignment="Center" FontSize="22" Click="Button_Click_3"/>
 			</StackPanel>
 				<Image HorizontalAlignment="Left" Height="175" Margin="10,10,10,10" VerticalAlignment="Top" Width="219" Source="/Assets/abacus.PNG"/>

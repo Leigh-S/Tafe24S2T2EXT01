@@ -47,5 +47,11 @@ namespace Calculator
 		{
 			CoreApplication.Exit();
 		}
+
+		//Navagates to trip calculator
+		private void Button_Click_4(object sender, RoutedEventArgs e)
+		{
+		// “Trip calculator C# code will be developed later”. 
+		}
 	}
 }
